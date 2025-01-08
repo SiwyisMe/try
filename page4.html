@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Podstrona 4</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="navigation"></div>
+
+    <div class="container">
+      <h1>FAQ</h1>
+      
+      <div class="accordion" id="faqAccordion">
+        <div class="card">
+          <div class="card-header" id="heading1">
+            <h2 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse1">
+                What is cybersecurity?
+              </button>
+            </h2>
+          </div>
+          <div id="collapse1" class="collapse" data-parent="#faqAccordion">
+            <div class="card-body">
+              Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="heading2">
+            <h2 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse2">
+                What is a firewall?
+              </button>
+            </h2>
+          </div>
+          <div id="collapse2" class="collapse" data-parent="#faqAccordion">
+            <div class="card-body">
+              A firewall is a network security device that monitors and filters incoming and outgoing network traffic.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="heading3">
+            <h2 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse3">
+                What is malware?
+              </button>
+            </h2>
+          </div>
+          <div id="collapse3" class="collapse" data-parent="#faqAccordion">
+            <div class="card-body">
+              Malware is any software intentionally designed to cause damage to a computer, server, or network.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="heading4">
+            <h2 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse4">
+                What is encryption?
+              </button>
+            </h2>
+          </div>
+          <div id="collapse4" class="collapse" data-parent="#faqAccordion">
+            <div class="card-body">
+              Encryption is the process of converting information or data into a code to prevent unauthorized access.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="heading5">
+            <h2 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse5">
+                What is two-factor authentication?
+              </button>
+            </h2>
+          </div>
+          <div id="collapse5" class="collapse" data-parent="#faqAccordion">
+            <div class="card-body">
+              Two-factor authentication is a security process that requires two different forms of identification to access something.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="template.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNavbar();
+        });
+    </script>
+  </body>
+</html>

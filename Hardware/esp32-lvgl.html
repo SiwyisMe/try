@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ESP32 LVGL</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div id="navigation"></div>
+
+    <div class="container">
+      <h1>ESP32 LVGL</h1>
+
+      <p>
+        2,4-calowy moduł ESP32 to kompaktowy wyświetlacz dotykowy LCD z
+        wbudowanym mikrokontrolerem ESP32, który obsługuje Wi-Fi i Bluetooth.
+      </p>
+
+      <p>
+        LVGL to popularna, darmowa i open-source'owa biblioteka graficzna,
+        pozwalająca tworzyć zaawansowane interfejsy użytkownika dla wielu
+        mikrokontrolerów i wyświetlaczy. Skorzystamy z płytki rozwojowej ESP32 z
+        wbudowanym dotykowym wyświetlaczem TFT.
+      </p>
+
+      <p>
+        To bardzo wszechstronna płytka do budowy interfejsów graficznych (GUI)
+        dla projektów IoT. Jest znacznie wygodniejsza i bardziej praktyczna niż
+        oddzielne stosowanie ESP32 z ekranem TFT.
+      </p>
+
+      <h2>Szczegółowe specyfikacje płytki:</h2>
+      <ul>
+        <li>
+          Mikrokontroler: Dwurdzeniowy MCU z wbudowanymi funkcjami Wi-Fi i
+          Bluetooth
+        </li>
+        <li>Częstotliwość taktowania: Do 240 MHz</li>
+        <li>Pamięć RAM: 520 KB SRAM, 448 KB ROM</li>
+        <li>Pamięć Flash: 4 MB</li>
+        <li>Wymiary modułu: 50,0 × 86,0 mm</li>
+        <li>Napięcie robocze: 5V</li>
+        <li>Pobór mocy: około 115 mA</li>
+        <li>Waga produktu: około 50 g</li>
+      </ul>
+
+      <h2>Elementy modułu:</h2>
+      <ul>
+        <li>
+          2,8-calowy kolorowy wyświetlacz TFT z układem sterującym ILI9341
+        </li>
+        <li>
+          Rozdzielczość wyświetlacza: 240x320 pikseli, z ekranem dotykowym
+          rezystancyjnym
+        </li>
+        <li>Obwód sterowania podświetleniem</li>
+        <li>Interfejs karty TF do zewnętrznej pamięci</li>
+        <li>Interfejs szeregowy</li>
+        <li>
+          Interfejs czujnika temperatury i wilgotności (interfejs DHT11) oraz
+          rezerwowy interfejs IO
+        </li>
+      </ul>
+
+      <h2>Możliwość programowania za pomocą:</h2>
+      <ul>
+        <li>Arduino IDE</li>
+        <li>MicroPython</li>
+        <li>ESP-IDF</li>
+      </ul>
+
+      <h2>Informacje dodatkowe:</h2>
+      <p>Koszt: około 60 zł + dostawa</p>
+      <p>
+        W zestawie: kabel USB C/micro, rysik, przewód do połączenia zasilania
+      </p>
+          <h2>Schematy:</h2>
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <img src="../obrazy/esp32/schemat1.jpg" alt="Schemat ESP32" class="img-fluid">
+            </div>
+            <div class="col-md-6 mb-4">
+              <img src="../obrazy/esp32/schemat2.jpg" alt="Schemat pinów ESP32" class="img-fluid">
+            </div>
+          </div>
+
+          <h2>Zdjęcia:</h2>
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <img src="../obrazy/esp32/esp32-1.jpg" alt="ESP32 Module" class="img-fluid">
+            </div>
+            <div class="col-md-4 mb-4">
+              <img src="../obrazy/esp32/esp32-2.jpg" alt="ESP32 z wyświetlaczem" class="img-fluid">
+            </div>
+            <div class="col-md-4 mb-4">
+              <img src="../obrazy/esp32/esp32-3.jpg" alt="ESP32 USB-C/Micro" class="img-fluid">
+            </div>
+            <div class="col-md-4 mb-4">
+              <img src="../obrazy/esp32/esp32-4.jpg" alt="ESP32 SD" class="img-fluid">
+            </div>
+          </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="../template.js"></script>
+    <script>
+        loadNavbar(true);
+    </script>
+  </body>
+</html>

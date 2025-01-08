@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bruce ESP32</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div id="navigation"></div>
+
+    <div class="container">
+      <h1>Bruce ESP32 - System Hakerski do Testów Penetracyjnych</h1>
+
+      <div class="feature-box">
+        <p>
+          Bruce ESP32 to zaawansowany system oparty na mikrokontrolerze ESP32, zaprojektowany do przeprowadzania testów penetracyjnych, eksploracji protokołów komunikacyjnych oraz analizowania bezpieczeństwa urządzeń IoT. System oferuje szereg funkcji i narzędzi, które umożliwiają przeprowadzanie ataków na sieci Wi-Fi, Bluetooth oraz Sub-GHz. Dzięki otwartemu oprogramowaniu, użytkownicy mogą dostosować urządzenie do swoich potrzeb, modyfikować funkcje i tworzyć własne skrypty.
+        </p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="feature-box">
+            <h2>Specyfikacja systemu:</h2>
+            <ul>
+              <li>Mikrokontroler: ESP32 (dwurdzeniowy ARM Cortex-M4, 240 MHz)</li>
+              <li>Pamięć: 4 MB Flash, 520 KB SRAM</li>
+              <li>Zasilanie: Zasilanie przez USB lub akumulator Li-Po</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="feature-box">
+            <h2>Komunikacja bezprzewodowa:</h2>
+            <ul>
+              <li>Wi-Fi (802.11 b/g/n)</li>
+              <li>Bluetooth (BLE i klasyczny)</li>
+              <li>Sub-GHz RF (433 MHz, 868 MHz)</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="feature-box">
+            <h2>Interfejsy:</h2>
+            <ul>
+              <li>Port GPIO</li>
+              <li>Złącze micro-USB</li>
+              <li>Port JTAG (do debugowania)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h2>Główne funkcje systemu:</h2>
+      
+      <div class="attack-section">
+        <h3>1. Ataki na sieci Wi-Fi</h3>
+        <ul>
+          <li>Deauthentication Attack: Umożliwia wysyłanie pakietów deauth do urządzeń w sieci, zmuszając je do rozłączenia się.</li>
+          <li>Sniffing Wi-Fi: Bruce ESP32 może przechwytywać i analizować pakiety danych przesyłane w sieci Wi-Fi.</li>
+          <li>Cracking WPA/WPA2: Po przechwyceniu pakietów handshake, Bruce ESP32 umożliwia próbę łamania haseł do sieci Wi-Fi.</li>
+        </ul>
+      </div>
+
+      <div class="attack-section">
+        <h3>2. Ataki na Bluetooth (BLE i klasyczny)</h3>
+        <ul>
+          <li>Sniffing Bluetooth: Możliwość przechwytywania pakietów przesyłanych przez urządzenia Bluetooth.</li>
+          <li>Man-in-the-Middle (MITM): Flipper ESP32 może przeprowadzać ataki MITM na urządzenia Bluetooth.</li>
+          <li>Ataki na BLE: Bruce ESP32 obsługuje także Bluetooth Low Energy (BLE).</li>
+        </ul>
+      </div>
+
+      <div class="attack-section">
+        <h3>3. Ataki Sub-GHz RF</h3>
+        <ul>
+          <li>Sniffing Sub-GHz: Bruce ESP32 umożliwia przechwytywanie i analizowanie sygnałów radiowych w pasmach Sub-GHz.</li>
+          <li>Emulacja Sub-GHz: System umożliwia emulowanie sygnałów radiowych.</li>
+        </ul>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <div class="feature-box">
+            <h3>4. Monitorowanie i analizowanie ruchu</h3>
+            <ul>
+              <li>Sniffing sieci bezprzewodowych: Przechwytywanie i analizowanie całego ruchu sieciowego.</li>
+              <li>Dekodowanie pakietów: Umożliwia dekodowanie przesyłanych pakietów w różnych protokołach.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="feature-box">
+            <h3>5. Programowanie i rozbudowa</h3>
+            <ul>
+              <li>Arduino IDE i MicroPython: Pełna kompatybilność z popularnymi środowiskami programistycznymi.</li>
+              <li>Rozbudowa o dodatkowe moduły: Możliwość podłączenia różnych zewnętrznych modułów.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <div class="feature-box">
+            <h3>6. Wielozadaniowość i działanie w tle</h3>
+            <ul>
+              <li>Wielozadaniowość: Obsługa wielu zadań równocześnie dzięki dwurdzeniowemu mikrokontrolerowi ESP32.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="feature-box">
+            <h3>7. Open-Source i społeczność</h3>
+            <ul>
+              <li>Open-Source: Bruce ESP32 jest w pełni otwartym projektem, rozwijanym przez społeczność hakerów i profesjonalistów.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="../template.js"></script>
+    <script>
+        loadNavbar(true);
+    </script>
+  </body>
+</html>
