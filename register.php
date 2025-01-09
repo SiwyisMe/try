@@ -1,13 +1,15 @@
 <?php
-include('session_handler.php');
-include('db_connection.php');
+session_start();
+require_once 'db_connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'] ?? null;
     $email = $_POST['email'] ?? null;
     $password = $_POST['password'] ?? null;
 
-    if (!empty($username) && !empty($email) && !empty($password)) {
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = "Błąd: Podano niepoprawny format adresu e-mail.";
+    } elseif (!empty($username) && !empty($email) && !empty($password)) {
         try {
             $password_hash = password_hash($password, PASSWORD_BCRYPT);
 
@@ -18,11 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $count = $stmt->fetchColumn();
 
             if ($count > 0) {
-                echo "Błąd: użytkownik o podanej nazwie użytkownika lub adresie e-mail już istnieje.";
+                $error = "Błąd: użytkownik o podanej nazwie użytkownika lub adresie e-mail już istnieje.";
             } else {
                 $sql = "INSERT INTO users (username, password_hash, email) VALUES (:username, :password_hash, :email)";
                 $stmt = $conn->prepare($sql);
-
                 $stmt->bindParam(':username', $username);
                 $stmt->bindParam(':password_hash', $password_hash);
                 $stmt->bindParam(':email', $email);
@@ -34,20 +35,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 exit;
             }
         } catch (PDOException $e) {
-            echo "Błąd zapisu do bazy danych: " . $e->getMessage();
+            $error = "Błąd zapisu do bazy danych: " . $e->getMessage();
         }
     } else {
-        echo "Wszystkie pola są wymagane!";
+        $error = "Wszystkie pola są wymagane!";
     }
-} else {
-    echo "Nieprawidłowe żądanie.";
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rejestracja</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
@@ -55,9 +54,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div id="navigation"></div>
 
-    <div class="register-container">
+    <div class="container">
         <h1>Rejestracja</h1>
-        <form method="POST" action="register.php">
+        <?php if (isset($error)): ?>
+            <div class="alert alert-danger"><?php echo $error; ?></div>
+        <?php endif; ?>
+        
+        <form action="register.php" method="POST">
             <div class="form-group">
                 <label for="username">Nazwa użytkownika</label>
                 <input type="text" class="form-control" id="username" name="username" required>
@@ -70,16 +73,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <label for="password">Hasło</label>
                 <input type="password" class="form-control" id="password" name="password" required>
             </div>
-            <button type="submit" class="btn btn-primary">Zarejestruj</button>
+            <button type="submit" class="btn btn-primary">Zarejestruj się</button>
         </form>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="template.js"></script>
     <script>
-        loadNavbar();
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNavbar();
+        });
     </script>
 </body>
 </html>
